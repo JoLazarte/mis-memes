@@ -365,6 +365,7 @@ input[type='range'] {
     margin: 0px 5px;
     background-color: white;
     color: var(--aside);
+    width: 96%;
 
 }
 

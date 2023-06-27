@@ -1,38 +1,34 @@
-// ASIDE
-const btnImagen = document.getElementById('btn-imagen');
-const solapaImagen= document.getElementById('solapa-imagen');
-
-const btnTexto = document.getElementById('btn-texto');
-const solapaTexto = document.getElementById('solapa-texto');
-
-
-btnImagen.addEventListener('click', () => {
-    solapaImagen.style.display = 'flex';
-    solapaTexto.style.display = 'none';
+$(document).ready(function(){
+    $(".icono-cruz").click(function(){
+        $(".box-aside").hide();
+        $("#btn-imagen").click(function(){
+            $(".box-aside").show();
+            $("#solapa-imagen").show();
+            $("#solapa-texto").hide();
+        });
+        $(document).ready(function(){
+            $("#btn-texto").click(function(){
+                $(".box-aside").show();
+                $("#solapa-texto").show();
+                $("#solapa-imagen").hide();
+            });
+        });
+    });
 });
 
-btnTexto.addEventListener('click', () => {
-    solapaTexto.style.display = 'flex';
-    solapaImagen.style.display = 'none';
+
+$(document).ready(function(){
+    $("#btn-imagen").click(function(){
+        $("#solapa-imagen").show();
+        $("#solapa-texto").hide();
+    });
 });
 
-// BOTON ASIDE 
-const btnAside = document.querySelector('.icono-cruz');
-const boxAside = document.querySelector('.box-aside');
-btnAside.addEventListener('click', () => {
-    boxAside.style.display = 'none';
-    btnImagen.addEventListener('click', () => {
-        boxAside.style.display = 'flex';
-        solapaImagen.style.display = 'flex';
-        solapaTexto.style.display = 'none';
+$(document).ready(function(){
+    $("#btn-texto").click(function(){
+        $("#solapa-texto").show();
+        $("#solapa-imagen").hide();
     });
-    
-    btnTexto.addEventListener('click', () => {
-        boxAside.style.display = 'flex';
-        solapaTexto.style.display = 'flex';
-        solapaImagen.style.display = 'none';
-    });
-
 });
 
 // MODO NOCTURNO/CLARO
@@ -40,6 +36,7 @@ const body = document.querySelector('body');
 const buttonTheme = document.querySelector('.button-theme');
 const icono = document.querySelector(".icono-theme");
 const textIconoTheme = document.querySelector('.text-icono-theme')
+
 
 buttonTheme.addEventListener('click', () => {
     
