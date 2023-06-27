@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+    <title>Creador de memes</title>
+</head>
+<body class="light">
+<!-- HEADER ------------------------------>    
+    <header>
+        <h1 class="tittle-header">Crea tu propio meme</h1>
+        <div id="botonesAside">
+            <button id="btn-imagen"><i class="far fa-file-image"><span class="spanBtn">Imagen</span></i></button>
+            <button id="btn-texto"><i class="far fa-file-alt"><span class="spanBtn">Texto</span></i></button>
+            <button class="button-theme" ><i class="far fa-sun blanco icono-theme"><span class="text-icono-theme spanBtn">Modo Oscuro</span></i></button>
+        </div>
+    </header>
+    <!-- MAIN --------------------->    
+    <div class="editor-container">
+        <main class="meme-container">
+            <div class="div-meme" id="divMeme">
+                <p id="textSup">TOP TEXT</p>
+                <div id="imagenMeme">     </div>
+                <p id="textInf">BOTTOM TEXT</p>
+            </div>
+            <button class="boton-descargar" id="descargarImg"><i class="fas fa-cloud-download-alt"><span class="spanBtn">Descargar meme</span></i></button>
+        </main>
+        <!-- ASIDE --------------->        
+        <aside class= "box-aside">
+            <button class="icono-cruz"><i class="fas fa-times" aria-hidden="true"></i></button>
+                    <!--------------- SOLAPA IMAGEN --------------->
+            <section id="solapa-imagen">
+            <h2 class="tittle-aside">Imagen</h2>
+            <div id="imagenEdit">
+                <h4 class="tittle-input">URL</h4>
+                <input type="text" class="input" id="url-img-input" aria-label="URL de la imagen">
+                <h4 class="tittle-input">CARGAR IMAGEN</h4>
+                <input type="file" name="inpFile" id="inpFile">
+                
+                <h4 class="tittle-input">FONDO</h4>
+                <div class="box-color-edit">
+                    <div class="colorF">
+                        <input name="Color de fondo" type="color" id="colorFondo" aria-label="Color de fondo" value="#000000" >
+                        <span id="nombreColorFondoImg" aria-hidden="true">#FFFFFF</span>
+                    </div>
+                    <select aria-label="Modo de mezcla de fondo de imagen" id="blMode" class="select-op">
+                        <option value="unset">Ninguno</option>
+                        <option value="lighten">Aclarar</option>
+                        <option value="darken">Oscurecer</option>
+                        <option value="difference">Diferencia</option>
+                        <option value="luminosity">Luminosidad</option>
+                        <option value="multiply">Multiplicar</option>
+                    </select>
+                </div>
+            </div>                
+                <h4 class="tittle-input">FILTROS</h4>
+          
+                    <div id="boxFilters" class="box-filtros"></div>
+          
+                    <button id="btn-filtro">Reestablecer Filtros</button>
+                
+            </section>    
+                        <!----------- SOLAPA TEXTO -------------->
+            <section id="solapa-texto">
+                <h2 class="tittle-aside">Texto</h2>
+                    <h4 class="tittle-input">SUPERIOR</h4>
+                    <div id="textSupEdit">
+                        <input type="text" class="input" id="text-superior"
+                        placeholder="TOP TEXT">
+                    <div>
+                        <input type="checkbox" name="text-superior" id="checkbox-superior">
+                        <label for="checkbox-superior">Sin texto superior</label>
+                    </div>
+                    </div>
+                    <h4 class="tittle-input">INFERIOR</h4>
+                    <div id="textInfEdit">
+                        <input type="text" class="input" id="text-inferior" placeholder="BOTTON TEXT">
+                        <div>
+                            <input type="checkbox" name="text-inferior" id="checkbox-inferior">
+                            <label for="checkbox-inferior">Sin texto inferior</label>
+                        </div>
+                    </div>
+                    <h4 class="tittle-input">FUENTE</h4>
+                        <select name="Fente-de-texto" id="selectFuente" >
+                            <option value="Arial">Arial</option>
+                            <option value="'Cinzel', serif">Cinzel</option>
+                            <option value="'Tillana', cursive">Tillana</option>
+                            <option value="'Iceberg', cursive">Iceberg</option>
+                            <option value="'Audiowide', cursive">Audiowide</option>
+                            <option value="'Henny Penny', cursive">Henny Penny</option>
+                            <option value="'Monoton', cursive">Monoton</option>
+                            <option value="'Nosifer', cursive">Nosifer</option>
+                            <option value="'Original Surfer', cursive">Original Surfer</option>
+                            <option value="'Train One', cursive">Train One</option>
+                            <option value="'Kranky', cursive">Kranky</option>
+                            <option value="'Vast Shadow', cursive">Vast Shadow</option>
+                            <option value="'Love Ya Like A Sister', cursive">Love Ya Like A Sister</option>  
+                        </select>
+                    <div id="sizeAlign">
+                        <input type="number" id="fontSize" name="fontSize" min="18" max="40" value="25">
+                        <button id="boton-txLeft"><i class="fas fa-align-left"></i></button>
+                        <button id="boton-txCenter"><i class="fas fa-align-center"></i></button>
+                        <button id="boton-txRight" ><i class="fas fa-align-right"></i></button>
+                    </div>
+                <div class="color-texto-fondo" >
+                    <h4 class="espacio-titulos">COLOR</h4>
+                    <h4 class="espacio-titulos">FONDO</h4>
+                </div>
+                <div class="color-texto-fondo" >
+                    <div class="coloryFondo" id="marginLeft">
+                        <input name="Color de texto" type="color" id="colorTexto" value="#000000" aria-label="Color de texto" >
+                        <span id="nombreColorTx" aria-hidden="true">#000000</span>
+                    </div>
+                    <div class="coloryFondo" id="marginRight">
+                        <input name="Color de fondo de texto" type="color" id="colorTxFondo" value="#FFFFFF" aria-label="Color de fondo de texto">
+                        <span id="nombreFondoClTx" aria-hidden="true">#FFFFFF</span>
+                    </div>
+                </div>
+                <div id="fondoTransparente">
+                    <input type="checkbox" name="fondo-transparente" id="fondo-transparente">
+                    <label for="fondo-transparente">Fondo transparente</label>
+                </div>        
+                <h4 class="tittle-input">CONTORNO</h4>
+                <div id="btnContorno"> 
+                    <button id="sinCont">Ninguno</button>
+                    <button id="contClaro">Claro</button>
+                    <button id="contOscuro">Oscuro</button>
+                </div>
+                <h4 class="tittle-input">ESPACIADO</h4>
+                <input type="number" id="paddingTB" value="20" min="10" max="40">
+                <h4 class="tittle-input">INTERLINEADOO</h4>
+                <select name="interlineado" id="interlineado">
+                    <option value="0.8">0.8</option>
+                    <option value="1">1</option>
+                    <option value="1.2" selected>1.2</option>
+                    <option value="1.5">1.5</option>
+                    <option value="2">2</option>
+                    <option value="2.5">2.5</option>
+
+                </select> 
+            </section>
+        </aside>
+    </div>   
+<script src="index.js"></script>
+<script 
+src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js" 
+integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ==" 
+crossorigin="anonymous">
+</script>
+<script 
+src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js" 
+integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA==" 
+crossorigin="anonymous">
+</script>
+</body>
+</html>

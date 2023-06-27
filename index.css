@@ -1,0 +1,580 @@
+@import url('https://fonts.googleapis.com/css2?family=Atma:wght@700&family=Audiowide&family=Cherry+Cream+Soda&family=Cinzel&family=Griffy&family=Henny+Penny&family=Iceberg&family=Kranky&family=Love+Ya+Like+A+Sister&family=Monoton&family=Nosifer&family=Original+Surfer&family=Tillana&family=Train+One&family=Vast+Shadow&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+/* MODO OSCURO/CLARO*/
+
+/*variables en css*/
+
+body.dark{
+    --header: #438a4afd;
+    --white: #ffffff;
+    --greylight: #9bb4a3;
+    --aside: #12844f;
+    --letra: #eceeec;
+    --color-boton-default-hover: #54865d;
+    --color-input-filtros: #d4ffe2; 
+    --color-fondo-input: #70c4a8;
+    --scroll-hover: #53ab90;
+}
+
+body.light{
+    --header: #ef7070;
+    --div: #9e9e9e;
+    --aside: #fa6b6b;
+    --letra: #ebdfdb;
+    --greylight: #f0bfbc;
+    --white: #ffffff;
+    --color-boton-default-hover: #ff6464;
+    --color-input-filtros: #ffaab8; 
+    --color-fondo-input: #ff99a0;
+    --scroll-hover: #fa5757;
+
+}
+
+/* CONTENEDORES PRINCIPALES*/
+
+body {
+    display: flex;
+    flex-direction: column;
+    /*overflow: hidden; */
+   
+ 
+}
+html, body {
+   
+    height: 100vh;
+    width: 100%;
+    margin: 0%;
+    /*overflow: hidden; */
+    background-color: var(--greylight);
+
+}
+h2 {
+    font-size:30px;
+}
+
+/* HEADER */
+
+header {
+    background-color:var(--header);
+    margin: 0%;
+}
+#botonesAside {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 6px;
+    justify-content: center;
+
+}
+
+.tittle-header {
+    font-family: 'Iceberg';
+    text-align: center;
+    font-size: 36px;
+    font-weight: 600;
+    margin: 12px;
+    letter-spacing: -1px;    
+    color: var(--letra);
+}
+
+.spanBtn {
+    margin-left: 8px;
+    font-family: 'Original Surfer', cursive;
+
+}
+
+#btn-imagen,#btn-texto, .button-theme {
+    background-color: var(--header);
+    color: var(--white);
+    margin-left: 18px;
+    padding: 0.7rem;
+    border-radius: 3px;
+    border: none;
+    font-size: 1rem;
+}
+
+#btn-imagen:hover, #btn-texto:hover, .button-theme:hover
+#btn-imagen:focus, #btn-texto:focus, .button-theme:focus {
+    background-color: var(--color-boton-default-hover);
+}
+
+/*MAIN*/
+
+.editor-container {
+    width: -webkit-fill-available;
+    display: flex;
+    flex-grow: 1;
+}
+
+.meme-container {
+   
+    background-color: var(--greylight);
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+}
+.div-meme{
+    width: 610px;
+    height: 610px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    background-color: black;
+
+}
+
+#textSup{
+    text-align: center;
+    top: 0;
+    margin: 0;
+    width: 100%;
+    position: static;
+    padding: 20px 50px;
+    background: white;
+    font-weight: 900;
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.2;
+
+}
+
+#imagenMeme{
+    flex-grow: 1;
+    background-size:100% 100%;
+    background-position: center;
+    background-repeat: no-repeat; 
+}
+#textInf{
+    background: white;
+    text-align: center;
+    bottom: 0;
+    margin: 0;
+    width: 100%;
+    position: static;
+    padding: 20px 50px;
+    background: white;
+    font-weight: 900;
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.2;
+}
+
+.boton-descargar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    padding: 18px;
+    background-color: #2e7d32;
+    color: white;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: lighter;
+}
+
+h4 {
+    font-size: 18.5px;
+}
+
+/* ASIDE */
+
+.icono-cruz{
+    position: fixed;
+    margin-right: 5px;
+    top: 15px;
+    right: 15px;
+    border-radius: 3px;
+    cursor: pointer;
+    background-color: var(--aside);
+    color: white;
+    border: 0;
+    font-size: 1.1rem;
+}
+
+/* SOLAPAS */
+
+#solapa-imagen {
+    display: flex;
+    flex-direction: column;
+}
+#solapa-texto {
+    display: none;
+    flex-direction: column;
+}
+
+.box-aside{
+    width: 270px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: var(--aside);
+    color: white;
+    padding: 20px 15px;
+    overflow: auto;
+    position: fixed;
+    top: 0;
+    right: 0;
+    box-shadow: -10px 10px 100px 5px rgb(0 0 0 / 30%);
+    z-index: 10;
+}
+/*SCROLL ASIDE*/
+/* width */
+.box-aside::-webkit-scrollbar {
+    width: 18px;
+}
+  
+  /* Track */
+.box-aside::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px var(--color-input-filtros); 
+    border-radius: 10px;
+}
+   
+  /* Handle */
+.box-aside::-webkit-scrollbar-thumb {
+    background: transparent; 
+    border-radius: 10px;
+}
+  
+  /* Handle on hover */
+.box-aside::-webkit-scrollbar-thumb:hover {
+    background: var(--scroll-hover);
+}
+
+.tittle-aside{
+    color: var(--white);
+    text-align: center;
+    font-family: 'Iceberg';
+    margin: 0;
+
+}
+
+.tittle-input{
+    font-family: 'Iceberg';
+    color: var(--white);
+    margin: 12px 12px 12px 5px;
+
+}
+
+.input {
+    margin: 5px;
+    border: none;
+    border-radius: 3px;
+    padding: 0.5rem 0.8rem;
+}
+
+#inpFile {
+    margin: 5px;
+    border: none;
+    border-radius: 3px;
+    font-family: 'Iceberg';
+    cursor: pointer;
+}
+
+
+/* SOLAPA IMAGEN */
+
+#imagenEdit, #textSupEdit, #textInfEdit { 
+    display: flex;
+    flex-direction: column;
+}
+
+.box-color-edit{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.colorF {
+    display: flex;
+    width: 50%;
+    height:1.9rem;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border-radius: 3px;
+    position: relative;
+
+}
+
+.select-op {
+    border: none;
+    border-radius: 3px;
+    width: 45%;
+    margin: 10px 0px 10px 0px;
+    padding: 0.3rem;
+    background-color: white;
+    font-family: 'Iceberg', cursive;
+    color: var(--aside);
+
+}
+
+.box-filtros{
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    color: white;
+    font-family:'Iceberg';
+}
+#btn-filtro{
+    margin-top: 15px;
+    border-radius: 4px;
+    padding: 0.5rem;
+    width: 9rem;
+    border: none;
+    font-family: 'Iceberg', cursive;
+    color: var(--aside);
+    font-size: 0.9rem;
+}
+
+.box-filtros > input[type='range'] {
+    transition: 0.2s;
+}
+
+input[type='range'] {
+    background: var(--color-input-filtros);
+    appearance: none;
+    height: 6px;
+    margin-top: 8.5px;
+    margin-bottom: 8.5px;
+    border-radius: 10px;
+}
+
+.box-filtros > input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+  }
+
+/* SOLAPA TEXTO */
+
+#selectFuente {
+    padding: 0.45rem;    
+    border: none;
+    border-radius: 3px;
+    margin: 0px 5px;
+    background-color: white;
+    color: var(--aside);
+
+}
+
+#sizeAlign {
+    display: flex;
+    flex-direction: row;
+
+}
+
+#fontSize {
+    padding: 0.45rem 0.8rem;    
+    border: none;
+    border-radius: 3px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    margin-left: 5px;
+    width: 50%;
+    color: var(--aside);
+    font-weight: 530;
+
+}
+
+#boton-txLeft, #boton-txCenter {
+    border: none;
+    border-radius: 3px;
+    margin: 1.5px;
+    font-size: 0.8rem;
+    width: 15.3%;
+    color: var(--aside);
+
+}
+
+#boton-txRight {
+    border: none;
+    border-radius: 3px;
+    margin: 1.5px 5px 1.5px 1.5px;
+    font-size: 0.8rem;
+    width: 15.3%;
+    color: var(--aside);
+}
+
+.color-texto-fondo {
+    display: flex;
+    flex-direction: row;
+    margin-right: 5px;
+    
+}
+
+#btnContorno {
+    display: flex;
+    flex-direction: row;
+    margin-left: 5px;
+    margin-right: 2px;
+}
+
+#sinCont, #contClaro, #contOscuro {
+    width: -webkit-fill-available;
+    height: 100%;
+    font-size: 15px;
+    line-height: 1.2;
+    padding: 0.3125rem;
+
+    border-radius: 3px;
+    border: none;
+    margin-right: 3px;
+    color: var(--aside);
+    background: white;
+    font-weight: 600;
+}
+
+.espacio-titulos {
+    font-family: 'Iceberg';
+    color: var(--white);
+    margin-left: 5px;
+    margin-bottom: 0;
+    width: 50%;
+}
+
+.coloryFondo {
+    display: flex;
+    height: 1.9rem;
+    margin-bottom: 15px;
+    margin-top: 10px;
+    border-radius: 3px;
+    width: 100%;
+    position: relative;
+}
+
+.colorF > span,
+.coloryFondo > span {
+    position: absolute;
+    left: 40px;
+    top: 52%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+input[type='color']{
+    background-color: var(--color-fondo-input);
+    border: 0;
+    width: 100%;
+    height: 100%;
+    /*padding: 15px 40px 25px 3px;*/
+}
+
+input[type='color']::-webkit-color-swatch {
+    width: 23px;
+    max-width: 23px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+input[type='color']::-webkit-color-swatch-wrapper {
+    display: flex;
+    align-items: center;
+    border-radius: 55px;
+    background:var(--color-fondo-input);
+
+}
+
+#fondoTransparente {
+    margin-bottom: 5px;
+}
+
+#marginRight {
+    margin-right: 0px;
+    margin-left: 10px;
+}
+#marginLeft {
+    margin-left: 5px;
+}
+
+
+#interlineado, #paddingTB {
+    padding: 0.4rem;
+    border: none;
+    border-radius: 3px;
+    margin: 0px 5px;
+    background-color: white;
+    color: var(--aside);
+    font-weight: 530;
+}
+
+.colorpick-eyedropper-input-trigger {
+    height: 38px;
+    width: 50%;
+}
+
+/* RESPONSIVE */
+
+@media (min-width: 1300px) {
+    .box-aside {
+      display: flex;
+    }
+    .icono-cruz {
+        display: none;
+    }
+    
+}
+
+@media (min-width:280px) and (max-width:700px){
+    .tittle-header {
+      font-size: 26px;
+    }
+    .box-aside {
+      width: 100%;
+      height: 100%;
+    }
+
+    .div-meme{
+        width: 100%;
+       
+    }
+    #textSup, #textInf {
+        font-size: 15px;
+    }
+    
+    .colorpick-eyedropper-input-trigger {
+        width: 20%;
+    }
+}
+
+@media (max-width:270px) {
+    .tittle-header {
+        font-size: 26px;
+    }
+    .box-aside {
+        width: 100%;
+    }
+
+    .div-meme{
+        width: 100%;
+     
+    }
+    html, body {
+        width: fit-content;
+    }
+    #textSup, #textInf {
+        font-size: 8px;
+    }
+}
+
+
+
+
